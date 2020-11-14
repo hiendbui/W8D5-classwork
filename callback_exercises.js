@@ -9,7 +9,11 @@ class Clock {
     }
 
     printTime() {
-        let printedTime = `${this.hours}:${this.minutes}:${this.seconds}`;
+        const formattedHours = this.hours < 10 ? `0${this.hours}:` : `${this.hours}:`;
+        const formattedMins = this.minutes < 10 ? `0${this.minutes}:` : `${this.minutes}:`;
+        const formattedSecs = this.seconds < 10 ? `0${this.seconds}` : `${this.seconds}`;
+
+        let printedTime = formattedHours + formattedMins + formattedSecs;
         console.log(printedTime);
     }
 
